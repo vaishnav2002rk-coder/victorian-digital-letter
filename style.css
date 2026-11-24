@@ -1,0 +1,875 @@
+
+/* BASIC RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #100d09;
+    font-family: Georgia, serif;
+}
+
+/* MAIN EXPERIENCE */
+
+#experience {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ROOM SCREEN */
+
+/* Parent: centers the scene on any screen */
+/* Wrapper: fills the whole screen */
+.room-wrapper {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    background: #0f0a05;
+}
+
+.room-screen {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #100d09;
+}
+.room-scene {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1678 / 937;
+    max-height: 100%;
+    overflow: hidden;
+  flex-shrink: 0;
+}
+
+  
+.room-background {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    display: block;
+    z-index: 0;
+}
+
+
+
+/* ROTATION SCREEN */
+
+#rotate-screen {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background:
+        radial-gradient(
+            circle,
+            #342519 0%,
+            #130e09 75%
+        );
+
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 25px;
+    color: #ead5ad;
+}
+
+
+.rotate-content {
+    max-width: 340px;
+}
+
+.rotate-icon {
+    font-size: 65px;
+    margin-bottom: 20px;
+    color: #d6ad72;
+}
+
+.rotate-content h1 {
+    font-size: 27px;
+    font-weight: normal;
+    margin-bottom: 14px;
+}
+
+.rotate-content p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #c8b99f;
+}
+
+/* SHOW INSTRUCTIONS WHEN PHONE IS VERTICAL */
+
+@media screen and (orientation: portrait) {
+    #rotate-screen {
+        display: flex;
+    }
+}
+
+/* LANDSCAPE DISPLAY */
+
+@media screen and (orientation: landscape) {
+    #rotate-screen {
+        display: none;
+    }
+}
+
+/* CHANDELIER INTERACTION */
+
+
+
+.chandelier-trigger {
+    position: absolute;
+    z-index: 10;
+
+    width: 24%;
+    left: 38%;
+    top: 0%;
+
+    display: block;
+    padding: 0;
+    border: 0;
+    background: transparent;
+
+    cursor: pointer;
+    transform-origin: 50% 27%;
+}
+
+.chandelier-trigger img {
+    display: block;
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+}
+
+
+
+/* Gentle swinging motion */
+
+.chandelier-trigger.is-swinging {
+    animation: chandelierSwing 2.3s ease-in-out;
+}
+
+@keyframes chandelierSwing {
+    0%   { transform: rotate(0deg); }
+    15%  { transform: rotate(-5deg); }
+    35%  { transform: rotate(3.8deg); }
+    55%  { transform: rotate(-2.8deg); }
+    75%  { transform: rotate(1.4deg); }
+    90%  { transform: rotate(-0.5deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* ============================= */
+/* RAINY WINDOW AND CURTAINS */
+/* ============================= */
+
+/* ============================= */
+/* CURTAINS */
+/* ============================= */
+
+.curtains {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    pointer-events: auto;
+}
+
+/* All three curtain images share the same position */
+
+/* ============================= */
+/* SPLIT CURTAIN ANIMATION */
+/* ============================= */
+
+
+
+.room {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.room-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* RAIN LAYER */
+
+/* ============================= */
+/* REALISTIC WINDOW RAIN */
+/* ============================= */
+
+/* RAIN LAYER */
+
+
+/* RAIN LAYER */
+
+.rain-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+    overflow: hidden;
+    container-type: size;
+}
+
+/* Each pane reveals its part of the original full-size image */
+
+.rain-pane {
+    position: absolute;
+    overflow: hidden;
+    pointer-events: none;
+    opacity: 0.42;
+    
+}
+
+.rain-pane img {
+    position: absolute;
+    width: 100cqw;
+    height: 100cqh;
+    max-width: none;
+    object-fit: fill;
+    display: block;
+    mix-blend-mode: screen;
+ animation: naturalRain 5s linear infinite;
+}
+
+/* Left column */
+
+.pane-1 {
+    left: 82.5%;
+    top: 15.2%;
+    width: 4.5%;
+    height: 10.5%;
+}
+
+.pane-1 img {
+    left: -82.5cqw;
+    top: -15.2cqh;
+}
+
+.pane-2 {
+    left: 82.5%;
+    top: 27.3%;
+    width: 4.5%;
+    height: 10.5%;
+}
+
+.pane-2 img {
+    left: -82.5cqw;
+    top: -27.3cqh;
+}
+
+.pane-3 {
+    left: 82.5%;
+    top: 39.4%;
+    width: 4.5%;
+    height: 10.5%;
+}
+
+.pane-3 img {
+    left: -82.5cqw;
+    top: -39.4cqh;
+}
+
+/* Right column */
+
+.pane-4 {
+    left: 89.1%;
+    top: 15.2%;
+    width: 4.7%;
+    height: 10.5%;
+}
+
+.pane-4 img {
+    left: -89.1cqw;
+    top: -15.2cqh;
+}
+
+.pane-5 {
+    left: 89.1%;
+    top: 27.3%;
+    width: 4.7%;
+    height: 10.5%;
+}
+
+.pane-5 img {
+    left: -89.1cqw;
+    top: -27.3cqh;
+}
+
+.pane-6 {
+    left: 89.1%;
+    top: 39.4%;
+    width: 4.7%;
+    height: 10.5%;
+}
+
+.pane-6 img {
+    left: -89.1cqw;
+    top: -39.4cqh;
+}
+
+/* Gentle diagonal rainfall */
+
+@keyframes naturalRain {
+    from {
+        transform: translate(0, -10px);
+    }
+
+    to {
+        transform: translate(-4px, 45px);
+    }
+}
+.window-frame-overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    display: block;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.sleeping-cat {
+    position: absolute;
+    z-index: 3;
+    width: 14%;
+    height: auto;
+    left: 18%;
+    top: 64%;
+    pointer-events: auto;
+}
+.cat-ear {
+    position: absolute;
+    z-index: 6;
+    width: 14%;
+    height: auto;
+    left: 18%;
+    top: 64%;
+    pointer-events: none;
+    transform-origin: 65% 85%;
+}
+.cat-ear.is-flicking {
+    animation: singleEarFlick 0.65s ease-in-out;
+}
+
+@keyframes singleEarFlick {
+    0%   { transform: rotate(0deg); }
+    35%  { transform: rotate(-1.75deg); }
+    65%  { transform: rotate(1deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Individual window panes */
+.right-armrest-foreground {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    display: block;
+    z-index: 4;
+    pointer-events: none;
+}
+/* Coffee cup */
+.coffee-cup {
+    position: absolute;
+    z-index: 4;
+    width: 8%;
+    height: auto;
+    left: 59%;
+    top: 71%;
+    display: block;
+    pointer-events: none;
+}
+/* Coffee steam */
+.coffee-steam {
+    position: absolute;
+    z-index: 5;
+    width: 4%;
+    height: auto;
+    left: 61%;
+    top: 64%;
+    pointer-events: none;
+    opacity: 0;
+    animation: coffeeSteam 4s linear infinite;
+}
+.steam-one {
+    animation-delay: 0s;
+}
+
+.steam-two {
+    animation-delay: -2.7s;
+}
+@keyframes coffeeSteam {
+    0% {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.55;
+    }
+
+    65% {
+        transform: translateY(-12px);
+        opacity: 0.65;
+    }
+
+    100% {
+        transform: translateY(-25px);
+        opacity: 0;
+    }
+}
+/* Blue rose bouquet */
+/* Blue rose bouquet */
+/* Blue rose bouquet */
+.flower-bouquet {
+    position: absolute;
+    z-index: 4;
+    width: 13%;
+    height: auto;
+    left: 88.5%;
+    top: 46%;
+    display: block;
+    pointer-events: auto;
+    transform-origin: 50% 95%;
+}
+
+/* Quick, delicate flower giggle */
+.flower-bouquet.is-giggling {
+    animation: flowerGiggle 0.8s ease-out;
+}
+
+@keyframes flowerGiggle {
+    0%   { transform: rotate(0deg); }
+    15%  { transform: rotate(-1.2deg); }
+    30%  { transform: rotate(1deg); }
+    45%  { transform: rotate(-0.7deg); }
+    60%  { transform: rotate(0.5deg); }
+    75%  { transform: rotate(-0.25deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Falling leaves */
+.falling-leaf {
+    position: absolute;
+    z-index: 5;
+    height: auto;
+    pointer-events: none;
+    display: block;
+    animation: leafFall var(--fall-duration) ease-in forwards;
+}
+
+@keyframes leafFall {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0;
+    }
+
+    12% {
+        opacity: 1;
+    }
+
+    65% {
+        opacity: 0.9;
+    }
+
+    100% {
+        transform: translate(
+            var(--fall-drift),
+            var(--fall-distance)
+        ) rotate(var(--fall-rotation));
+        opacity: 0;
+    }
+}
+
+/* ================================= */
+/* INTERACTIVE ENVELOPE */
+/* ================================= */
+
+.envelope-container {
+    position: absolute;
+    inset: 0;
+    z-index: 12;
+    pointer-events: none;
+}
+
+/* Original envelope on the desk */
+
+/* Envelope resting on the writing mat */
+/* Envelope resting on the writing mat */
+.envelope-trigger {
+    position: absolute;
+    z-index: 8;
+    left: 73%;
+    top: 69%;
+    width: 11%;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) rotate(-3deg);
+    transform-origin: center center;
+}
+
+.envelope-trigger img {
+    display: block;
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+}
+
+/* Gentle first-click giggle */
+.envelope-trigger.is-giggling {
+    animation: envelopeGiggle 0.65s ease-out;
+}
+
+@keyframes envelopeGiggle {
+    0%   { transform: translate(-50%, -50%) rotate(-3deg); }
+    20%  { transform: translate(-50%, -50%) rotate(-4.2deg); }
+    40%  { transform: translate(-50%, -50%) rotate(-1.8deg); }
+    60%  { transform: translate(-50%, -50%) rotate(-3.8deg); }
+    80%  { transform: translate(-50%, -50%) rotate(-2.6deg); }
+    100% { transform: translate(-50%, -50%) rotate(-3deg); }
+}
+
+.envelope-trigger img {
+    display: block;
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+}
+
+/* Prominent envelope — hidden initially */
+
+.envelope-focus {
+    display: none;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    perspective: 1000px;
+}
+
+/* Main envelope image */
+
+.envelope-main {
+    position: absolute;
+    width: 45%;
+    height: auto;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    pointer-events: auto;
+cursor: pointer;
+}
+
+
+/* Open envelope with transparent centre */
+.envelope-open {
+    position: absolute;
+    width: 45%;
+    height: auto;
+    left: 50%;
+    top: 49.6%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    display: none;
+    pointer-events: none;
+}
+.envelope-inner-lip {
+    position: absolute;
+    width: 44%;
+    height: auto;
+    left: 50%;
+    top: 40.2%;
+    transform: translate(-50%, -50%);
+    .envelope-inner-lip { display: none; }
+    display: none;
+    pointer-events: none;
+}
+
+
+/* Wax seal layers */
+
+/* Wax seal layers */
+
+.wax-seal {
+    position: absolute;
+    width: 10%;
+    height: auto;
+    left: 50%;
+    top: 50%;
+    z-index: 6;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+/* Show the intact seal when the foreground envelope appears */
+.wax-seal-intact {
+    display: block;
+}
+
+/* Keep later seal stages hidden */
+.wax-seal-crack-1,
+.wax-seal-broken {
+    display: none;
+}
+
+/* Envelope flap */
+.envelope-flap {
+    position: absolute;
+    width: 43.8%;
+    height: auto;
+    left: 50%;
+    top: 54.1%;
+
+    transform: translate(-50%, -50%) rotateX(0deg);
+   transform-origin: 50% 0%;
+
+    z-index: 5;
+    display: none;
+    backface-visibility: visible;
+    pointer-events: none;
+}
+
+.envelope-flap.is-opening {
+    animation: envelopeFlapOpen 1.2s ease-in-out forwards;
+}
+
+@keyframes envelopeFlapOpen {
+    from {
+        z-index: 5;
+        transform: translate(-50%, -50%) rotateX(0deg);
+    }
+
+    /* flap is vertical here, so it's safe to drop it behind the letter */
+    50% {
+        z-index: 5;
+        transform: translate(-50%, -50%) rotateX(90deg);
+    }
+
+    51% {
+        z-index: 2;
+    }
+
+    to {
+        z-index: 2;   /* open flap now sits behind the letter (3) */
+        transform: translate(-50%, -50%) rotateX(160deg);
+    }
+}
+/* Folded letter — hidden until the envelope opens */
+
+/* Folded letter — tucked inside the envelope */
+.letter-folded {
+    position: absolute;
+    width: 38.8%;          /* was 34% → fills the gaps at the sides */
+    height: auto;
+    left: 50%;
+    top: 61%;          /* was 57% → keeps the top edge below the flap */
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    display: none;
+    pointer-events: auto;
+    cursor: pointer;
+}
+/* Letter unfolding transition */
+.letter-unfolding {
+    position: absolute;
+    width: 38.8%;
+    height: auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 8;
+    display: none;
+    pointer-events: auto;
+}
+/* Automatic letter unfolding */
+.letter-unfolding.is-unfolding {
+    animation: letterUnfold 1.5s ease-in-out forwards;
+}
+
+@keyframes letterUnfold {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.96);
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+/* Final unfolded letter */
+.letter-unfolded {
+    position: absolute;
+    width: 55%;
+    height: auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9;
+    display: none;
+    pointer-events: auto;
+}
+/* Front pocket: covers the lower part of the letter */
+.envelope-front-pocket {
+    position: absolute;
+    width: 50.5%;
+    height: auto;
+    left: 50.3%;   /* was 50% → moves it right */
+    top: 74.5%;    /* was 76% → moves it up */
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    display: none;
+    pointer-events: none;
+}
+/* Letter extraction animation */
+/* Letter extraction animation */
+/* Smooth letter extraction */
+/* One continuous, elegant letter extraction */
+/* Smooth letter extraction */
+/* Original letter: stays behind the envelope lip */
+.letter-folded.letter-pop-out {
+    z-index: 3;                       /* starts behind the front pocket */
+    will-change: transform;
+    animation: letterPopOut 2.4s cubic-bezier(0.45, 0.05, 0.25, 1) forwards;
+}
+
+@keyframes letterPopOut {
+    0% {
+        z-index: 3;
+        transform: translate(-50%, -50%) translateY(0) scale(1);
+    }
+
+    /* rises slowly out of the envelope, still behind the pocket */
+    55% {
+        z-index: 3;
+        transform: translate(-50%, -50%) translateY(-30%) scale(1.01);
+    }
+
+    /* switches to the front once it's above the pocket's top edge */
+    70% {
+        z-index: 7;
+        transform: translate(-50%, -50%) translateY(-45%) scale(1.02);
+    }
+
+    /* glides up and settles */
+    100% {
+        z-index: 7;
+        transform: translate(-50%, -50%) translateY(-62%) scale(1.06);
+    }
+}
+/* Click-synchronised Victorian guide */
+.interaction-guide {
+    position: absolute;
+    left: 50%;
+    bottom: 8%;
+    transform: translateX(-50%);
+    z-index: 20;
+
+    padding: 12px 24px;
+    max-width: 85%;
+    width: max-content;
+
+    background: rgba(15, 25, 18, 0.48);
+    border: 1px solid rgba(225, 195, 135, 0.25);
+    border-radius: 8px;
+
+    color: rgba(255, 244, 220, 0.88);
+    font-family: Georgia, serif;
+    font-size: clamp(13px, 1.2vw, 17px);
+    letter-spacing: 0.5px;
+    text-align: center;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.interaction-guide.is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+/* Victorian wall clock */
+.clock-container {
+    position: absolute;
+
+    /* Initial position on the empty green wall */
+    left: 20%;
+    top: 4%;
+
+    width: 12%;
+    height: auto;
+
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* Stationary clock body */
+.victorian-clock {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+/* Swinging pendulum */
+.clock-pendulum {
+    position: absolute;
+
+    width: 42%;
+    height: auto;
+
+    left: 32%;
+    top: 46%;
+
+    transform-origin: 50% 23%;
+    animation: clockPendulumSwing 2s ease-in-out infinite alternate;
+}
+
+@keyframes clockPendulumSwing {
+    from {
+        transform: rotate(-8deg);
+    }
+
+    to {
+        transform: rotate(8deg);
+    }
+}
+/* Tablet landscape envelope adjustment */
+@media (pointer: coarse) and (orientation: landscape) {
+    .envelope-focus {
+        transform: translateX(12%) scale(0.88);
+        transform-origin: center center;
+    }
+}

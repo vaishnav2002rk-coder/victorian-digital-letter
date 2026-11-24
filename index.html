@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Letter for You</title>
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+ <main id="experience">
+
+<section id="room" class="room-screen">
+    <!-- Victorian wall clock -->
+<div class="clock-container">
+
+    <!-- Stationary clock body -->
+    <img
+        src="assets/clock/victorian-clock.png"
+        alt=""
+        class="victorian-clock"
+    >
+
+    <!-- Animated pendulum -->
+    <img
+        src="assets/clock/clock-pendulum.png"
+        alt=""
+        class="clock-pendulum"
+    >
+
+</div>
+ <div class="room-scene">
+
+ <img
+ src="assets/room/room-no-curtains.png"
+alt="A warm Victorian library"
+ class="room-background"
+>
+
+
+<div class="rain-layer" aria-hidden="true">
+
+ <div class="rain-pane pane-1">
+ <img src="assets/water-drops.png" alt="">
+ </div>
+
+ <div class="rain-pane pane-2">
+ <img src="assets/water-drops.png" alt="">
+ </div>
+
+ <div class="rain-pane pane-3">
+ <img src="assets/water-drops.png" alt="">
+
+ </div>
+ <div class="rain-pane pane-4">
+<img src="assets/water-drops.png" alt="">
+
+ </div>
+ <div class="rain-pane pane-5">
+<img src="assets/water-drops.png" alt="">
+ </div>
+
+ <div class="rain-pane pane-6">
+<img src="assets/water-drops.png" alt="">
+</div>
+
+</div>
+<img
+src="assets/room/room-window-frame.png"
+ alt=""
+ class="window-frame-overlay"
+>
+ <button
+ id="chandelier"
+ class="chandelier-trigger"
+ aria-label="Swing the chandelier"
+>
+ <img
+  src="assets/chandelier/chandelier.png"
+ alt=""
+ >
+ </button>
+
+<img
+ src="assets/cat/cat.png"
+ alt="Sleeping cat"
+ class="sleeping-cat"
+ >
+ <img
+ src="assets/cat/ear.png"
+ alt=""
+class="cat-ear"
+>
+<!-- Coffee cup -->
+<img
+    src="assets/coffie/coffie cup.png"
+    alt="A warm cup of coffee"
+    class="coffee-cup"
+>
+<!-- Blue rose bouquet -->
+<img
+    src="assets/flowers/Flower.png"
+    alt="Blue roses in a Victorian vase"
+    class="flower-bouquet"
+>
+<!-- Coffee steam -->
+<!-- Coffee steam layer 1 -->
+<img
+    src="assets/coffie/steam.png"
+    alt=""
+    class="coffee-steam steam-one"
+>
+
+<!-- Coffee steam layer 2 -->
+<img
+    src="assets/coffie/steam.png"
+    alt=""
+    class="coffee-steam steam-two"
+>
+<img
+    src="assets/cat/right-armrest-foreground.png"
+    alt=""
+    class="right-armrest-foreground"
+>
+
+<!-- Interactive envelope -->
+<div id="envelope-container" class="envelope-container">
+
+    <!-- Original envelope on the table -->
+    <button
+        id="envelope-trigger"
+        class="envelope-trigger"
+        aria-label="Open the letter"
+    >
+        <img
+            src="assets/envelope/envelope-on-table.png"
+            alt="A sealed Victorian envelope"
+        >
+    </button>
+
+    <!-- Prominent envelope interaction -->
+<div id="envelope-focus" class="envelope-focus">
+
+    <!-- Base envelope: no wax seal -->
+    <img
+        src="assets/envelope/envelope-no-seal.png"
+        alt=""
+        class="envelope-main"
+    >
+<!-- Open envelope base with transparent interior -->
+<img
+    src="assets/envelope/envelope-open-base.png"
+    alt=""
+    class="envelope-open"
+>
+<!-- Horizontal inner lip of the envelope -->
+<img
+    src="assets/envelope/envelope-inner-lip.png"
+    alt=""
+    class="envelope-inner-lip"
+>
+<!-- Folded letter inside the envelope -->
+<img
+    src="assets/envelope/letter-folded.png"
+    alt="Folded letter"
+    class="letter-folded"
+>
+<!-- Letter unfolding transition -->
+<img
+    src="assets/envelope/letter-unfolding.png"
+    alt=""
+    class="letter-unfolding"
+>
+
+<!-- Final unfolded letter -->
+<img
+    src="assets/envelope/letter-unfolded.png"
+    alt="Unfolded letter"
+    class="letter-unfolded"
+>
+<!-- Foreground copy for the smooth letter extraction -->
+
+<!-- Front triangular pocket with broken wax seal -->
+<img
+    src="assets/envelope/envelope-flap-broken.png"
+    alt=""
+    class="envelope-front-pocket"
+>
+    <!-- Envelope flap -->
+    <img
+        src="assets/envelope/envelope-flap-triangle.png"
+        alt=""
+        class="envelope-flap"
+    >
+
+    <!-- Wax seal states -->
+    <img
+        src="assets/envelope/wax-seal-intact.png"
+        alt=""
+        class="wax-seal wax-seal-intact"
+    >
+
+    <img
+        src="assets/envelope/wax-seal-crack-1.png"
+        alt=""
+        class="wax-seal wax-seal-crack-1"
+    >
+
+    <img
+        src="assets/envelope/wax-seal-broken.png"
+        alt=""
+        class="wax-seal wax-seal-broken"
+    >
+<!-- Click-synchronised interaction guide -->
+<div id="interaction-guide" class="interaction-guide">
+    <span id="guide-text"></span>
+</div>
+
+</section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
